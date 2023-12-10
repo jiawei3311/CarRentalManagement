@@ -117,10 +117,10 @@ namespace CarRentalManagement.Server.Controllers
             //}
             //var make = await _context.Makes.FindAsync(id);
             var make = await _unitOfWork.Makes.Get(q => q.Id == id);
-            //if (make == null)
-            //{
-            //    return NotFound();
-            //}
+            if (make == null)
+            {
+                return NotFound();
+            }
 
             //_context.Makes.Remove(make);
             //await _context.SaveChangesAsync();
