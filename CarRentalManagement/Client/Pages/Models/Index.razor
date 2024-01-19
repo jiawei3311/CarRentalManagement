@@ -4,7 +4,12 @@
 @attribute [Authorize]
 
 <h3 class="card-title">Car Models</h3>
-
+<a href="/models/create" class="btn btn-secondary">
+    <span class="oi oi-plus"></span>
+    Create New Model
+</a>
+<br />
+<br />
 @if (Models == null)
 {
     <div class="alert alert-info">Loading Models...</div>
@@ -27,7 +32,7 @@ else
                         <a href="/Models/view/@Model.Id" class="btn btn-primary">
                             <span class="oi oi-book"></span>
                         </a>
-                        <a href="/Model/edit/@Model.Id" class="btn btn-warning">
+                        <a href="/Models/edit/@Model.Id" class="btn btn-warning">
                             <span class="oi oi-pencil"></span>
                         </a>
                         <button class="btn btn-danger" @onclick="@(() => Delete(Model.Id))">

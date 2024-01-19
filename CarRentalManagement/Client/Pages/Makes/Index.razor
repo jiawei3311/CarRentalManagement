@@ -4,6 +4,12 @@
 @attribute [Authorize]
 
 <h3 class="card-title">Car Makes</h3>
+<a href="/makes/create" class="btn btn-secondary">
+    <span class="oi oi-plus"></span>
+    Create New Make
+</a>
+<br />
+<br />
 
 @if (Makes == null)
 {
@@ -27,7 +33,7 @@ else
                         <a href="/makes/view/@make.Id" class="btn btn-primary">
                             <span class="oi oi-book"></span>
                         </a>
-                        <a href="/make/edit/@make.Id" class="btn btn-warning">
+                        <a href="/makes/edit/@make.Id" class="btn btn-warning">
                             <span class="oi oi-pencil"></span>
                         </a>
                         <button class="btn btn-danger" @onclick="@(() => Delete(make.Id))">
